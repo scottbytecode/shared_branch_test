@@ -18,7 +18,7 @@ view: orders {
 
   dimension_group: created {
     type: time
-    timeframes: [raw, time, date, week, month, quarter, year]
+    timeframes: [raw, time, date, week, month, quarter, year, fiscal_month_num, fiscal_year]
     sql: ${TABLE}.created_at ;;
   }
 
@@ -71,7 +71,7 @@ view: orders {
 
   dimension: user_id {
     type: number
-    # hidden: yes
+    hidden: yes
     sql: ${TABLE}.user_id ;;
   }
   measure: count {
