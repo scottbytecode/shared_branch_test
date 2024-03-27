@@ -1,4 +1,4 @@
----
+
 - dashboard: brands_query_test
   title: Brands Query Test
   layout: newspaper
