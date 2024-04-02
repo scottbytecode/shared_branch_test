@@ -24,7 +24,6 @@ datagroup: testing_trigger_on_schedules{
   max_cache_age: "1 hour"
 }
 
-
 fiscal_month_offset: 1
 
 persist_with: scott_shared_branch_test_default_datagroup
