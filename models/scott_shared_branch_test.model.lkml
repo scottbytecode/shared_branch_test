@@ -20,7 +20,7 @@ datagroup: scott_shared_branch_test_default_datagroup {
 }
 
 datagroup: testing_trigger_on_schedules{
-  sql_trigger: SELECT EXTRACT(DAY FROM CURRENT_TIMESTAMP) = 2 AND EXTRACT(HOUR FROM CURRENT_TIMESTAMP) = 18 ;;
+  sql_trigger: SELECT EXTRACT(DAY FROM CURRENT_TIMESTAMP) = 2 AND EXTRACT(HOUR FROM CURRENT_TIMESTAMP) = 19 ;;
   max_cache_age: "1 hour"
 }
 
