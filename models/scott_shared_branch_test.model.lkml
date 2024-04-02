@@ -8,10 +8,22 @@ include: "/dashboards/*"
 # Datagroups define a caching policy for an Explore. To learn more,
 # use the Quick Help panel on the right to see documentation.
 
+access_grant: region_test {
+  user_attribute: region
+  allowed_values: ["East"]
+}
+
+
 datagroup: scott_shared_branch_test_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
   max_cache_age: "1 hour"
 }
+
+datagroup: testing_trigger_on_schedules{
+  sql_trigger: SELECT EXTRACT(DAY FROM CURRENT_TIMESTAMP) = 2 AND EXTRACT(HOUR FROM CURRENT_TIMESTAMP) = 18 ;;
+  max_cache_age: "1 hour"
+}
+
 fiscal_month_offset: 1
 
 persist_with: scott_shared_branch_test_default_datagroup
@@ -24,6 +36,7 @@ persist_with: scott_shared_branch_test_default_datagroup
 # To see the Explore you’re building, navigate to the Explore menu and select an Explore under "Scott Shared Branch Test"
 
 explore: order_items {
+  persist_with: testing_trigger_on_schedules
   join: users {
     type: left_outer
     sql_on: ${order_items.user_id} = ${users.id} ;;

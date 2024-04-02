@@ -13,6 +13,7 @@ view: events {
     type: number
     sql: ${TABLE}.id ;;
   }
+
     # Here's what a typical dimension looks like in LookML.
     # A dimension is a groupable field that can be used to filter query results.
     # This dimension will be called "Browser" in Explore.
@@ -91,6 +92,14 @@ view: events {
     # hidden: yes
     sql: ${TABLE}.user_id ;;
   }
+
+  dimension: current_datetime {
+    label: "Current Date/Time"
+    type: string
+    sql: FORMAT_DATE("%b-%d-%Y %R", CURRENT_DATETIME) ;;
+    html: <a style="color: #005a8c; font-size:100%; text-align:center">{{rendered_value}}</a> ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [id, users.last_name, users.id, users.first_name]
