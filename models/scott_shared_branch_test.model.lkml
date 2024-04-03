@@ -21,7 +21,7 @@ datagroup: scott_shared_branch_test_default_datagroup {
 
 datagroup: testing_trigger_on_schedules{
   sql_trigger: SELECT EXTRACT(DAY FROM CURRENT_TIMESTAMP) = 3 AND EXTRACT(HOUR FROM CURRENT_TIMESTAMP) = 16
-               AND EXTRACT(MINUTE FROM CURRENT_TIMESTAMP) = 21 ;;
+               AND EXTRACT(MINUTE FROM CURRENT_TIMESTAMP) BETWEEN 27 AND 32 ;;
 }
 
 fiscal_month_offset: 1
