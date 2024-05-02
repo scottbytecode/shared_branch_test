@@ -113,3 +113,5 @@ explore: events {
     relationship: many_to_one
   }
 }
+
+explore: navigation_links {}
