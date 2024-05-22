@@ -12,7 +12,8 @@ view: navigation_links {
     filter: sub_region_filter {}
     filter: territory_filter {}
     filter: country_filter {}
-
+    filter: category {}
+    filter: brand {}
     ################################################################################
     ###################################  DIMENSIONS  ###############################
     ################################################################################
@@ -158,6 +159,12 @@ view: navigation_links {
           ;;
     }
 
+  dimension: target_dashboard {
+    type: string
+    sql: 1=1;;
+    html:   <a target="new" href="https://bytecode.looker.com/dashboards/1WGpDBaUBoIgzk6O8OjnJC?Category={{_filters['category'] | url_encode}}&Brand={{_filters['brand'] | url_encode}}"><img src="https://i.ibb.co/Rvy3DF4/Subscription.png" alt="Subscription" border="0" width="100%"></a>;;
+  }
+
     dimension: subscription_events {
       group_label: "Self Service Dashboards"
       type: string
@@ -201,4 +208,7 @@ view: navigation_links {
           </a>
           ;;
     }
-  }
+
+
+
+}

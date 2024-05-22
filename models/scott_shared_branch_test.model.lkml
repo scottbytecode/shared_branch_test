@@ -24,6 +24,9 @@ datagroup: testing_trigger_on_schedules{
                AND EXTRACT(MINUTE FROM CURRENT_TIMESTAMP) BETWEEN 27 AND 32 ;;
 }
 
+datagroup: update_schedule_run {
+  sql_trigger: SELECT max(order_id) from thelook_ecommerce.orders  ;;
+}
 fiscal_month_offset: 1
 
 persist_with: scott_shared_branch_test_default_datagroup
