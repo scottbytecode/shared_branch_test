@@ -25,7 +25,7 @@ datagroup: testing_trigger_on_schedules{
 }
 
 datagroup: update_schedule_run {
-  sql_trigger: SELECT max(order_id) from thelook_ecommerce.orders  ;;
+  sql_trigger: SELECT max(order_id) from orders  ;;
 }
 fiscal_month_offset: 1
 
