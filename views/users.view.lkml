@@ -83,7 +83,7 @@ view: users {
   }
 
   dimension: postal_code {
-    type: string
+    type: zipcode
     sql: ${TABLE}.postal_code ;;
   }
 
