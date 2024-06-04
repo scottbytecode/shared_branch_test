@@ -39,6 +39,9 @@ persist_with: scott_shared_branch_test_default_datagroup
 # To see the Explore you’re building, navigate to the Explore menu and select an Explore under "Scott Shared Branch Test"
 
 explore: order_items {
+  access_filter: {
+    field: distribution_centers.name
+    user_attribute: distribution_ctr}
   persist_with: testing_trigger_on_schedules
   join: users {
     type: left_outer
@@ -65,6 +68,7 @@ explore: order_items {
   }
 
   join: distribution_centers {
+
     type: left_outer
     sql_on: ${products.distribution_center_id} = ${distribution_centers.id} ;;
     relationship: many_to_one
